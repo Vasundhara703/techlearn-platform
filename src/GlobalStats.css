@@ -1,0 +1,77 @@
+.floating-stats-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  z-index: 1000;
+}
+
+.floating-stat-card {
+  position: relative;
+  background: linear-gradient(135deg, #2563eb, #3b82f6);
+  color: white;
+  padding: 1rem 1.5rem;
+  border-radius: 20px;
+  box-shadow: 0 8px 30px rgba(37, 99, 235, 0.5);
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  animation: floatBounce 2.5s ease-in-out infinite alternate;
+  min-width: 200px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.floating-stat-card.closing {
+  transform: translateX(150%);
+  opacity: 0;
+}
+
+.floating-stat-card h4 {
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.floating-stat-card .count {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-shadow: 0 0 12px rgba(255, 255, 255, 0.8);
+  animation: glow 1.8s ease-in-out infinite alternate;
+}
+
+/* Close button */
+.close-btn {
+  position: absolute;
+  top: 6px;
+  right: 10px;
+  background: transparent;
+  border: none;
+  font-size: 1.2rem;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+  transition: transform 0.15s ease;
+}
+
+.close-btn:hover {
+  transform: scale(1.2);
+}
+
+@keyframes floatBounce {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes glow {
+  0% {
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
+  }
+  100% {
+    text-shadow: 0 0 20px rgba(255, 255, 255, 1);
+  }
+}

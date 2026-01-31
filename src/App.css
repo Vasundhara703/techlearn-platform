@@ -1,0 +1,238 @@
+/* ---------- Root & Container ---------- */
+body, #root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  font-family: 'Inter', sans-serif;
+  background: #f0f2f5;
+  color: #222;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ---------- Grid Layout for Coding Section ---------- */
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-bottom: 100px;
+}
+
+.main-card {
+  flex: 2;
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 30px 25px;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.main-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+.main-card h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.badge {
+  padding: 5px 12px;
+  border-radius: 12px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+.badge.easy { background: #28a745; }
+.badge.medium { background: #ffc107; color: #222; }
+.badge.hard { background: #dc3545; }
+
+/* Problem statement */
+.problem-statement {
+  font-size: 1.1rem;
+  margin: 15px 0 20px;
+  line-height: 1.6;
+}
+
+/* Coding textarea */
+.code-editor {
+  width: 100%;
+  height: 250px;
+  padding: 15px;
+  font-family: 'Fira Code', monospace;
+  font-size: 1rem;
+  border-radius: 12px;
+  border: 1px solid #ddd;
+  resize: vertical;
+  background: #f9f9f9;
+  outline: none;
+  transition: border 0.3s, box-shadow 0.3s;
+}
+
+.code-editor:focus {
+  border: 1px solid #2563eb;
+  box-shadow: 0 5px 15px rgba(37, 99, 235, 0.2);
+}
+
+/* Action buttons */
+.actions {
+  margin-top: 20px;
+  display: flex;
+  gap: 15px;
+}
+
+button.primary {
+  background: #2563eb;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+button.primary:hover {
+  background: #1e4bb8;
+  transform: translateY(-2px);
+}
+
+button.secondary {
+  background: #f0f2f5;
+  color: #222;
+  padding: 10px 20px;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+button.secondary:hover {
+  background: #e2e6ea;
+  transform: translateY(-2px);
+}
+
+/* Output area */
+.output {
+  margin-top: 25px;
+  padding: 15px;
+  border-radius: 12px;
+  background: #f1f5f9;
+  font-family: 'Fira Code', monospace;
+  font-size: 1rem;
+  min-height: 40px;
+  line-height: 1.5;
+  white-space: pre-wrap;
+}
+
+/* ---------- Sidebar ---------- */
+.sidebar {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+/* Cards in sidebar */
+.card {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 20px 15px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+}
+
+.card h3 {
+  margin-bottom: 12px;
+  font-size: 1.3rem;
+}
+
+/* Stats card */
+.stats-card ul {
+  list-style: none;
+  padding: 0;
+  font-size: 0.95rem;
+}
+
+.stats-card li {
+  margin-bottom: 8px;
+}
+
+/* Hint card */
+.hint-card p {
+  font-size: 1rem;
+  line-height: 1.5;
+  transition: color 0.3s, font-weight 0.3s;
+}
+
+/* Hint card animation */
+@keyframes hintPop {
+  0% {
+    transform: scale(1);
+    color: #dc3545;
+  }
+  50% {
+    transform: scale(1.2);
+    color: #ff4d4d;
+  }
+  100% {
+    transform: scale(1);
+    color: #dc3545;
+  }
+}
+
+.hint-card p.unlocked {
+  color: #dc3545; /* red */
+  font-weight: 600;
+  font-style: normal;
+  animation: hintPop 0.8s ease-in-out 1; /* play once when unlocked */
+}
+
+/* Subscribe card */
+.subscribe-card button {
+  width: 100%;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1024px) {
+  .grid {
+    flex-direction: column;
+  }
+
+  .main-card, .sidebar {
+    flex: unset;
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .main-card, .sidebar {
+    padding: 20px 15px;
+  }
+
+  .actions {
+    flex-direction: column;
+  }
+
+  .actions button {
+    width: 100%;
+  }
+}

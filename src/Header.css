@@ -1,0 +1,150 @@
+.header {
+  position: sticky;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(15px);
+  z-index: 1000;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.logo h1 {
+  font-size: 1.8rem;
+  color: #2563eb;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.nav-links button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 1rem;
+  padding: 0.4rem 0.8rem;
+  border-radius: 8px;
+  transition: background 0.25s, transform 0.2s;
+}
+
+.nav-links button:hover {
+  background: rgba(37, 99, 235, 0.15);
+  transform: scale(1.05);
+}
+
+/* Keep the Notify button consistent */
+.notify-btn {
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 0.6rem 1rem;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.15s ease, background 0.2s ease;
+}
+
+.notify-btn:hover {
+  transform: scale(1.04);
+}
+
+.notify-btn:active {
+  transform: scale(0.96);
+}
+.nav-links button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 1rem;
+  padding: 0.4rem 0.8rem;
+  border-radius: 8px;
+  transition: background 0.25s, transform 0.2s, color 0.25s;
+  color: #0f2a44;
+}
+
+.nav-links button:hover {
+  background: rgba(37, 99, 235, 0.15);
+  transform: scale(1.05);
+}
+
+.nav-links button.active {
+  color: #2563eb;
+  background: rgba(37, 99, 235, 0.15);
+  transform: scale(1.08);
+  font-weight: 600;
+}
+/* Toast / Popup */
+.toast {
+  position: fixed;
+  top: 80px; /* just below header */
+  right: 20px;
+  background: #2563eb;
+  color: white;
+  padding: 0.8rem 1.2rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  animation: slideIn 0.3s ease, fadeOut 0.5s ease 2s forwards;
+  z-index: 2000;
+  font-size: 0.95rem;
+}
+
+/* Toast Animations */
+@keyframes slideIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeOut {
+  to { opacity: 0; transform: translateY(-10px); }
+}
+/* Modern Toast Bubble */
+.toast-modern {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: #2563eb;
+  color: white;
+  padding: 1rem 1.5rem;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.95rem;
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25);
+  z-index: 2000;
+  animation: bounceIn 0.4s ease, fadeOut 0.5s ease 2s forwards;
+}
+
+/* Close Button */
+.toast-close {
+  margin-left: 1rem;
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+  font-weight: bold;
+  transition: transform 0.15s ease;
+}
+
+.toast-close:hover {
+  transform: scale(1.2);
+}
+
+/* Bounce In Animation */
+@keyframes bounceIn {
+  0% { opacity: 0; transform: translateY(20px) scale(0.8); }
+  60% { opacity: 1; transform: translateY(-5px) scale(1.05); }
+  80% { transform: translateY(2px) scale(0.98); }
+  100% { transform: translateY(0) scale(1); }
+}
+
+/* Fade Out */
+@keyframes fadeOut {
+  to { opacity: 0; transform: translateY(10px); }
+}

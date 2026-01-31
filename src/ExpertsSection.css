@@ -1,0 +1,64 @@
+.experts {
+  background: #0f1220;
+  color: #ffffff;
+  padding: 80px 40px;
+}
+
+.experts-container {
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* HEADER */
+.experts-header {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto 60px;
+}
+
+.experts-header h2 {
+  font-size: 40px;
+  margin-bottom: 16px;
+}
+
+.experts-header p {
+  color: #b8bdd6;
+}
+
+/* GRID */
+.experts-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+}
+
+.expert-card {
+  background: #171a2e;
+  border-radius: 18px;
+  padding: 24px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.expert-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.expert-card img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  border-radius: 14px;
+  margin-bottom: 16px;
+}
+
+.expert-card h3 {
+  font-size: 18px;
+  margin-bottom: 6px;
+}
+
+.expert-card span {
+  font-size: 14px;
+  color: #9aa0d6;
+}

@@ -1,0 +1,214 @@
+/* ---------- Reset & Global ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+body {
+  background: #f4f8ff;
+  color: #0f2a44;
+}
+
+/* Container */
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 1.5rem;
+  animation: fadeIn 0.6s ease-out;
+}
+
+/* ---------- Header ---------- */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.notify-btn {
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 0.6rem 1rem;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.15s ease, background 0.2s ease;
+}
+
+.notify-btn:hover {
+  transform: scale(1.04);
+}
+
+.notify-btn:active {
+  transform: scale(0.96);
+}
+
+/* ---------- Grid Layout ---------- */
+.grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+/* ---------- Cards ---------- */
+.card {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(15px);
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 10px 30px rgba(37, 99, 235, 0.08);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(37, 99, 235, 0.15);
+}
+
+/* ---------- Problem / Coding Card ---------- */
+.main-card h2 {
+  font-size: 1.8rem;
+}
+
+.badge {
+  padding: 0.3rem 0.7rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: white;
+}
+
+.badge.easy {
+  background: #28a745;
+}
+
+.badge.medium {
+  background: #ffc107;
+  color: #222;
+}
+
+.badge.hard {
+  background: #dc3545;
+}
+
+.problem-statement {
+  margin: 15px 0;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Coding Area */
+textarea.code-editor {
+  width: 100%;
+  height: 180px;
+  margin-top: 1rem;
+  padding: 1rem;
+  border-radius: 12px;
+  border: 1px solid #c7d2fe;
+  font-family: monospace;
+  background: rgba(255,255,255,0.25);
+  backdrop-filter: blur(10px);
+  color: #0f2a44;
+  resize: vertical;
+}
+
+/* Action Buttons */
+.actions {
+  margin-top: 1rem;
+  display: flex;
+  gap: 1rem;
+}
+
+button.primary,
+button.secondary {
+  border: none;
+  border-radius: 12px;
+  padding: 0.6rem 1.2rem;
+  cursor: pointer;
+  transition: transform 0.15s ease, background 0.2s ease;
+}
+
+button.primary {
+  background: #1d4ed8;
+  color: white;
+}
+
+button.secondary {
+  background: #3b82f6;
+  color: white;
+}
+
+button.primary:hover,
+button.secondary:hover {
+  transform: scale(1.04);
+}
+
+button.primary:active,
+button.secondary:active {
+  transform: scale(0.96);
+}
+
+/* Output Box */
+.output {
+  margin-top: 1.2rem;
+  background: rgba(224, 234, 255, 0.3);
+  padding: 1rem;
+  border-radius: 12px;
+  font-size: 0.9rem;
+  font-family: monospace;
+  animation: fadeIn 0.4s ease-in;
+}
+
+/* ---------- Sidebar ---------- */
+.sidebar .card {
+  margin-bottom: 20px;
+}
+
+.sidebar h3 {
+  margin-bottom: 0.6rem;
+  color: #2563eb;
+}
+
+.sidebar ul {
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+/* Hint Card Animation */
+.hint {
+  animation: pulse 2.5s infinite;
+}
+
+/* Subscribe Card */
+.subscribe-card {
+  text-align: center;
+}
+
+.subscribe-card button {
+  width: 100%;
+}
+
+/* ---------- Animations ---------- */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.4); }
+  70% { box-shadow: 0 0 0 10px rgba(37, 99, 235, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(37, 99, 235, 0); }
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  textarea.code-editor {
+    height: 160px;
+  }
+}
